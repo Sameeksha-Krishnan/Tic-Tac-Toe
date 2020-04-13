@@ -1,4 +1,5 @@
-Welcome to Tic-Tac-Toe....
+Welcome to Tic-Tac-Toe.....
+
 Tic-Tac-Toe is a fun game created for you guys!
 
 Rules:
@@ -11,5 +12,6 @@ Rules:
 *One who manages to get a straight line wins the game
 
 
-Thank You for playing the game......
 ALL THE BEST GUYS!!! 
+
+Thank You for playing the game.....
