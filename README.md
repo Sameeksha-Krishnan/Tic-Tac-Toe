@@ -3,6 +3,7 @@ Welcome to Tic-Tac-Toe.....
 Tic-Tac-Toe is a fun game created for you guys!
 
 Rules:
+
 *The game involves two players
 
 *One player will take 'x' and other will take 'o' 
@@ -14,4 +15,4 @@ Rules:
 
 ALL THE BEST GUYS!!! 
 
-Thank You for playing the game.....
+And Thank You for choosing this game.....
