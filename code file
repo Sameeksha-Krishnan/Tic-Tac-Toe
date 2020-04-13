@@ -1,0 +1,85 @@
+from IPython.display import clear_output
+def display_board(board):
+    clear_output()
+    print(board[0]+"|"+board[1]+"|"+board[2])
+    print("-----")
+    print(board[3]+"|"+board[4]+"|"+board[5])
+    print("-----")
+    print(board[6]+"|"+board[7]+"|"+board[8])
+def player_input():
+    player1=input("choose 'x' or 'o': ")
+    while(player1 !='x' and player1!='o'):
+        player1=input("choose 'x' or 'o': ")
+    if(player1=='x'):
+        player2='o'
+    else:
+        player2='x'
+    return(player1,player2)
+(player1,player2)=player_input()
+def place_marker(board, marker, position):
+    board[position]=marker
+def win_check(board, mark):
+    if((board[0]==board[1]==board[2]==mark) or(board[3]==board[4]==board[5]==mark)or (board[6]==board[7]==board[8]==mark)or
+      (board[0]==board[3]==board[6]==mark)or(board[1]==board[4]==board[7]==mark)or(board[2]==board[5]==board[8]==mark)or
+      (board[0]==board[4]==board[8]==mark)or(board[2]==board[4]==board[6]==mark)):
+        return True
+    else:
+        return False
+def space_check(board, position):
+    
+    if(board[position]==" "):
+        return True
+    else:
+        return False
+def full_board_check(board):
+    if((board[0]!=" " and board[1]!=" " and board[2]!=" " and board[3]!=" " and board[4]!=" " and board[5]!=" " and board[6]!=" " and board[7]!=" " and board[8]!=" ")):
+        return True
+    else:
+        return False
+def player_choice(board):
+    position=9
+    while( position not in [0,1,2,3,4,5,6,7,8] or space_check(test_board,position)==False):
+        position=int(input("choose a no from (0-8): "))
+    
+    return position
+def replay():
+    x=input("want to play again if yes enter 'y' else 'n': ")
+    if(x=='y'):
+            return True
+    else:
+            return False
+play_game=True
+while(play_game==True):
+    print('Welcome to Tic Tac Toe!')
+    test_board=[' ',' ',' ',' ',' ',' ',' ',' ',' ']
+    print("display the tic-tac-toe board")
+    display_board(test_board)
+    (player1,player2)=player_input()
+    print("player1 has chosen {}".format(player1))
+    print("player2 has chosen {}".format(player2))
+    x=choose_first()
+    while(full_board_check(test_board)==False):
+        if(x==0):
+            print("player1's turn")
+            no=player_choice(test_board)
+            place_marker(test_board,player1,no)
+            display_board(test_board)
+            if(win_check(test_board,player1)==False):
+                x=1
+            else:
+                print("player1 won the game")
+                break
+        else:
+            print("player2's turn")
+            no=player_choice(test_board)
+            place_marker(test_board,player2,no)
+            display_board(test_board)
+            if(win_check(test_board,player2)==False):
+                x=0
+            else:
+                print("player2 won the game")
+                break
+    if(replay()==True):
+        play_game=True
+    else:
+        play_game=False
